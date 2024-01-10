@@ -54,8 +54,10 @@ resource "aws_iam_role_policy" "lambda_exec_policy" {
         "Effect" : "Allow",
         "Action" : [
           "s3:GetObject",
+          "s3:ListBucket",
         ],
         "Resource" : [
+          "arn:aws:s3:::sod-auctions",
           "arn:aws:s3:::sod-auctions/*"
         ]
       },
